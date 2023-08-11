@@ -25,7 +25,7 @@ class Skill extends Component {
 
     render(){
         const skills = this.state.skills.map(skill =>   
-            <li key={skill.id}>
+            <li key={crypto.randomUUID()}>
                 <h4><EditableElements inputType="text" eleId="skill-name" classes="" readOnly={this.props.readOnly} textInner={skill.name} /></h4> 
             </li>
         );

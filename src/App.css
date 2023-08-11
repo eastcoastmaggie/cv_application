@@ -29,14 +29,14 @@ h3{
 #topbar{ 
   grid-row: 1;
   grid-column: 1 / span 3;
-  min-height: 30px;
-  background-color: rgba(122, 45, 32, 0.897);
-  background-image:  url('./images/allec-gomes');
+  min-height: 36px;
+  background-color: rgba(44, 11, 5, 0.97);
   background-size:cover;
   background-position:top;
   display: flex;
-  color: aliceblue;
-  padding-bottom: 6px;
+  color: rgb(255, 255, 255);
+  align-content: center;
+  align-items: center;
 }
 
 #sidebar {
@@ -121,6 +121,9 @@ label{
 #education{
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
 }
 
 #education ul{
@@ -131,6 +134,11 @@ label{
 #education li{
   margin-bottom: 20px;
 }
+#education button{
+  flex-grow: initial;
+  align-self: flex-end;
+  margin-right: 40px;
+}
 
 #education label{
   text-transform: uppercase;
@@ -139,10 +147,10 @@ label{
 #main{
   grid-row: 3;
   padding-left : 30px;
-  padding-bottom: 30px;
+  padding-bottom: 30px;  
+  width: 80%;
 }
 #experience {
-  width: 40%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -178,6 +186,7 @@ label{
 #experience button{
   background-color: transparent;
   color:rgb(122, 122, 122);
+  align-self: flex-end;
 }
 
 #experience .company{
@@ -194,8 +203,8 @@ label{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 40%;
 }
+
 
 #skills > ul{
   list-style: none;
@@ -205,7 +214,7 @@ label{
   margin-bottom: 10px;
   font-weight: 100;
   display: grid;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   align-items: center;
 }
@@ -216,15 +225,10 @@ label{
   display: inline-flex;
 }
 
-#skills > .rating{
-  display: none;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  border-radius: 5px;
-}
+#skills button{
+  align-self:auto;
 
-#skills > .rating .shade{
-  background-color: rgb(228, 134, 117);
-} 
+}
 
 .hide{
   display: none;
@@ -263,29 +267,37 @@ input{
 #main button{
   background-color: transparent;
   color: rgb(221, 88, 48);
-  border-radius: 15px;
-  border: 2px solid black;
-  padding: 2px 8px;
+  border-radius: 10px;
+  border: 2px solid rgb(27, 27, 27);
+  padding: 2px 12px;
+  align-self: flex-start;
+  width: 150px;
+}
+
+#main li button{
+  padding: 2px 6px;
+  width:auto;
+  float: right;
 }
 
 #sidebar button{
-  background-color: aliceblue;
-  color: rgb(221, 88, 48);
+  background-color: transparent;
+  color: rgb(228, 134, 117);
   border-radius: 15px;
-  border: 2px solid black;
-  padding: 2px 8px;
+  border: 2px solid rgb(228, 134, 117);
+  padding: 2px 6px;
+  align-self: flex-end;
+  
 }
 
 #main button:hover, #sidebar button:hover{
   background-color: rgb(221, 88, 48);
   color: white;
-  border-radius: 15px;
-  border: 2px solid black;
-  padding: 2px 8px;
+
 }
 
 #topbar > div{
-  margin: 5px;
+  margin: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -307,7 +319,6 @@ input{
 
 .toggle-button {
   position: relative;
-  top: 4px;
   width: 100px;
   height: 32px;
   overflow: hidden;
@@ -334,7 +345,7 @@ input{
 }
 .layer {
   width: 100%;
-  background-color: #dff5ff;
+  background-color: #91a9b4;
   transition: 0.3s ease all;
   z-index: 1;
 }
@@ -358,41 +369,42 @@ input{
 #button-10 .knobs:before {
   content: "";
   left: 4px;
-  background-color: rgb(151, 185, 181);
+  top: 4px;
+  background-color: rgb(75, 111, 128);
 }
 
 #button-10 .knobs:after {
   content: "View";
   right: 4px;
-  top: 6px;
-  color: #4e4e4e;
+  top: 8px;
+  color:#686868;
 }
 
 #button-10 .knobs span {
   display: inline-block;
   left: 4px;
-  top: 6px;
+  top: 8px;
   color: #fff;
   z-index: 1;
 }
 
 #button-10 .checkbox:checked + .knobs span {
-  color: #4e4e4e;
+  color: #868686;
 }
 
 #button-10 .checkbox:checked + .knobs:before {
   left: 60px;
-  background-color: rgb(122, 122, 122);
+  background-color: rgba(44, 11, 5, 0.97)
 }
 
 #button-10 .checkbox:checked + .knobs:after {
   color: #fff;
-  top: 6px;
+  top: 7px;
 
 }
 
 #button-10 .checkbox:checked ~ .layer {
-  background-color:rgb(228, 228, 228);
+  background-color:rgba(112, 81, 76, 0.97);
 }
 
 .read-only{

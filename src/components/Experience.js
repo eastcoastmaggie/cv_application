@@ -16,12 +16,10 @@ class Experience extends Component {
     }
     addAdditionalPoint(employmentItem) {
         // find and replace the object in experience with a copy with more points in list
-        console.log(this.state.experience[this.state.experience.indexOf(employmentItem)])
         let updatedList = this.state.experience;
-        console.log(updatedList);
         let points = updatedList[(updatedList.indexOf(employmentItem))].list;
 
-        points = points.concat({key:points.length+1, value:'New point'});
+        points = points.concat({key:crypto.randomUUID(), value:'New point'});
 
         updatedList = updatedList.map(original => {
             if (original === updatedList[(updatedList.indexOf(employmentItem))]) {
@@ -44,7 +42,7 @@ class Experience extends Component {
 
     render(){
         const employment = this.state.experience.map(employment =>
-            <li key={employment.id}>
+            <li key={crypto.randomUUID()}>
                 
                 <h4><EditableElements inputType="text" eleId="employment-title" classes="bold" readOnly={this.props.readOnly} textInner={employment.title} /></h4> 
                 <span className='year'>(<EditableElements inputType="text" eleId="year" readOnly={this.props.readOnly} textInner={employment.year}/>)</span>
@@ -63,8 +61,8 @@ class Experience extends Component {
                 <div id='experience'>
                     <h3 >Experience</h3>
                     <ul>{employment}</ul>
-                    {this.addButton("add employment", this.addAdditionalExp, {id:this.state.experience.length+1, title:'Job Title', year: 2023, company:'Veridian Dynamics', 
-                    summary:'job summary is what responsibilites you performed and what your every day looked like.', list:[{key:1, value:'point 1'}, {key:2, value:'point 2'}]})}
+                    {this.addButton("Add Employment", this.addAdditionalExp, {id:crypto.randomUUID(), title:'Job Title', year: 2023, company:'Veridian Dynamics', 
+                    summary:'job summary is what responsibilites you performed and what your every day looked like.', list:[{key:crypto.randomUUID(), value:'point 1'}, {key:crypto.randomUUID(), value:'point 2'}]})}
                 </div>
             );
     }

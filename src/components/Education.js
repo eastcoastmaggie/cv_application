@@ -20,7 +20,7 @@ class Education extends Component {
         if ( this.props.readOnly() === true){
             return <></>;
         } else {
-            return <AddButton label="+" onButtonClick={this.addAdditional} parameter={{title:'degree', facility:'University of TOP', id:this.state.education.length+1, year:2020}}/>
+            return <AddButton label="+" onButtonClick={this.addAdditional} parameter={{title:'degree', facility:'University of TOP', id:crypto.randomUUID(), year:2020}}/>
         }
     }
     render(){

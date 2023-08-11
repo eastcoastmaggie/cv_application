@@ -26,11 +26,11 @@ class App extends Component {
   }
 
   render() {
-    const education = [{title:'degree', facility:'University of TOP', id:1, year:2020}];
-    const expr = [{id:1, title:'Job Title', year: 2023, company:'Veridian Dynamics', summary:'job summary is what responsibilites you performed and what your every day looked like.', 
-                  list:[{key:1, value:'point 1'}, {key:2, value:'point 2'}] }, ];
-    const skillList = [{name:'HTML/CSS/JS', rating:5, id:1},{name:'React', rating:2, id:2},{name:'Java', rating:1, id:3}]
-    const instruction = this.readOnly() == true ? "" : "Click on the values to edit."
+    const education = [{title:'degree', facility:'University of TOP', year:2020}];
+    const expr = [{ title:'Job Title', year: 2023, company:'Veridian Dynamics', summary:'job summary is what responsibilites you performed and what your every day looked like.', 
+                  list:[{value:'point 1'}, {value:'point 2'}] }, ];
+    const skillList = [{name:'HTML/CSS/JS', rating:5},{name:'React', rating:2},{name:'Java', rating:1}]
+    const instruction = this.readOnly() === true ? "" : "Click on the values to edit."
     return (
       <div id='app'>
         <div id='topbar'>
